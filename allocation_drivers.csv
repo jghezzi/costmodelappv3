@@ -1,0 +1,13 @@
+input_date,product_name,units,allocation_basis
+2015-01-05,Provision,1000.00,ending_rooftops
+2015-01-05,Conquest,500.00,ending_rooftops
+2015-01-05,Canadian Provision,350.00,ending_rooftops
+2015-01-05,Auction Genius,2000.00,ending_rooftops
+2015-01-05,KBB Price Advisor,200.00,ending_rooftops
+2015-01-05,AIS,350.00,ending_rooftops
+2015-02-12,Provision,1200.00,ending_rooftops
+2015-02-12,Conquest,600.00,ending_rooftops
+2015-02-12,Canadian Provision,360.00,ending_rooftops
+2015-02-12,Auction Genius,2100.00,ending_rooftops
+2015-02-12,KBB Price Advisor,350.00,ending_rooftops
+2015-02-12,AIS,400.00,ending_rooftops

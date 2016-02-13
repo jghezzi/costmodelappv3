@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date_active: 2016-02-09
+  date_inactive_date: MyString
+  date_dim_id: 1
+
+two:
+  name: MyString
+  date_active: 2016-02-09
+  date_inactive_date: MyString
+  date_dim_id: 1

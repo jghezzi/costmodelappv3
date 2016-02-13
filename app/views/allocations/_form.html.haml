@@ -1,0 +1,24 @@
+= fields_for Allocation.new, method: :post do |f|
+	- if @allocation.errors.any?
+		#error_explanation
+			%h2= "#{pluralize(@allocation.errors.count, "error")} prohibited this allocation from being saved:"
+			%ul
+				- @allocation.errors.full_messages.each do |msg|
+					%li= msg
+
+	.field
+		- Product.all.each do |product|
+			= f.check_box "product_ids[]", product.id
+			= product.name
+			%br
+		
+		%br
+		%br
+		= f.select "allocation_basis", options_for_select(AllocationInput.all.pluck(:allocation_basis).uniq)
+		%br
+		%br
+
+		= "Name Your Allocation"
+		= f.text_field "allocation_name" 
+
+		= f.submit "Create Allocation"

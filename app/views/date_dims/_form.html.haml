@@ -1,0 +1,19 @@
+= form_for @date_dim do |f|
+  - if @date_dim.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@date_dim.errors.count, "error")} prohibited this date_dim from being saved:"
+      %ul
+        - @date_dim.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :input_date
+    = f.date_select :input_date
+  .field
+    = f.label :beginning_period
+    = f.date_select :beginning_period
+  .field
+    = f.label :ending_period
+    = f.date_select :ending_period
+  .actions
+    = f.submit 'Save'

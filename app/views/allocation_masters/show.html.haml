@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Allocation name:
+  = @allocation_master.allocation_name
+%p
+  %b Allocation input:
+  = @allocation_master.allocation_input_id
+
+= link_to 'Edit', edit_allocation_master_path(@allocation_master)
+\|
+= link_to 'Back', allocation_masters_path

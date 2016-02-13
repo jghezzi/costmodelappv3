@@ -1,0 +1,28 @@
+= form_for @allocation_input do |f|
+  - if @allocation_input.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@allocation_input.errors.count, "error")} prohibited this allocation_input from being saved:"
+      %ul
+        - @allocation_input.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :input_date
+    = f.date_select :input_date
+  .field
+    = f.label :product_name
+    = f.text_field :product_name
+  .field
+    = f.label :units
+    = f.text_field :units
+  .field
+    = f.label :allocation_basis
+    = f.text_field :allocation_basis
+  .field
+    = f.label :date_dim_id
+    = f.number_field :date_dim_id
+  .field
+    = f.label :product_id
+    = f.number_field :product_id
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Input date:
+  = @allocation_input.input_date
+%p
+  %b Product name:
+  = @allocation_input.product_name
+%p
+  %b Units:
+  = @allocation_input.units
+%p
+  %b Allocation basis:
+  = @allocation_input.allocation_basis
+%p
+  %b Date dim:
+  = @allocation_input.date_dim_id
+%p
+  %b Product:
+  = @allocation_input.product_id
+
+= link_to 'Edit', edit_allocation_input_path(@allocation_input)
+\|
+= link_to 'Back', allocation_inputs_path

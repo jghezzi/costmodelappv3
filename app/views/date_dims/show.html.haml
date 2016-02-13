@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Input date:
+  = @date_dim.input_date
+%p
+  %b Beginning period:
+  = @date_dim.beginning_period
+%p
+  %b Ending period:
+  = @date_dim.ending_period
+
+= link_to 'Edit', edit_date_dim_path(@date_dim)
+\|
+= link_to 'Back', date_dims_path

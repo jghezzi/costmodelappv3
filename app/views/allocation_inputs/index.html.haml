@@ -1,0 +1,31 @@
+%h1 Listing allocation_inputs
+
+%table
+  %thead
+    %tr
+      %th Input date
+      %th Product name
+      %th Units
+      %th Allocation basis
+      %th Date dim
+      %th Product
+      %th
+      %th
+      %th
+
+  %tbody
+    - @allocation_inputs.each do |allocation_input|
+      %tr
+        %td= allocation_input.input_date
+        %td= allocation_input.product_name
+        %td= allocation_input.units
+        %td= allocation_input.allocation_basis
+        %td= allocation_input.date_dim_id
+        %td= allocation_input.product_id
+        %td= link_to 'Show', allocation_input
+        %td= link_to 'Edit', edit_allocation_input_path(allocation_input)
+        %td= link_to 'Destroy', allocation_input, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Allocation input', new_allocation_input_path

@@ -1,0 +1,16 @@
+= form_for @allocation_master do |f|
+  - if @allocation_master.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@allocation_master.errors.count, "error")} prohibited this allocation_master from being saved:"
+      %ul
+        - @allocation_master.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :allocation_name
+    = f.text_field :allocation_name
+  .field
+    = f.label :allocation_input_id
+    = f.number_field :allocation_input_id
+  .actions
+    = f.submit 'Save'

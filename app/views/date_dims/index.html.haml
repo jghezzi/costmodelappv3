@@ -1,0 +1,25 @@
+%h1 Listing date_dims
+
+%table
+  %thead
+    %tr
+      %th Input date
+      %th Beginning period
+      %th Ending period
+      %th
+      %th
+      %th
+
+  %tbody
+    - @date_dims.each do |date_dim|
+      %tr
+        %td= date_dim.input_date
+        %td= date_dim.beginning_period
+        %td= date_dim.ending_period
+        %td= link_to 'Show', date_dim
+        %td= link_to 'Edit', edit_date_dim_path(date_dim)
+        %td= link_to 'Destroy', date_dim, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Date dim', new_date_dim_path

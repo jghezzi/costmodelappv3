@@ -1,0 +1,31 @@
+%h1 Listing allocations
+
+%table
+  %thead
+    %tr
+      %th Allocation master
+      %th Product
+      %th Allocation input
+      %th Date dim
+      %th Allocation factor
+      %th Allocation date
+      %th
+      %th
+      %th
+
+  %tbody
+    - @allocations.each do |allocation|
+      %tr
+        %td= allocation.allocation_master_id
+        %td= allocation.product_id
+        %td= allocation.allocation_input_id
+        %td= allocation.date_dim_id
+        %td= allocation.allocation_factor
+        %td= allocation.allocation_date
+        %td= link_to 'Show', allocation
+        %td= link_to 'Edit', edit_allocation_path(allocation)
+        %td= link_to 'Destroy', allocation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Allocation', new_allocation_path

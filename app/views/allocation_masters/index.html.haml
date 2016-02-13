@@ -1,0 +1,23 @@
+%h1 Listing allocation_masters
+
+%table
+  %thead
+    %tr
+      %th Allocation name
+      %th Allocation input
+      %th
+      %th
+      %th
+
+  %tbody
+    - @allocation_masters.each do |allocation_master|
+      %tr
+        %td= allocation_master.allocation_name
+        %td= allocation_master.allocation_input_id
+        %td= link_to 'Show', allocation_master
+        %td= link_to 'Edit', edit_allocation_master_path(allocation_master)
+        %td= link_to 'Destroy', allocation_master, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Allocation master', new_allocation_master_path

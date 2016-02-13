@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Allocation master:
+  = @allocation.allocation_master_id
+%p
+  %b Product:
+  = @allocation.product_id
+%p
+  %b Allocation input:
+  = @allocation.allocation_input_id
+%p
+  %b Date dim:
+  = @allocation.date_dim_id
+%p
+  %b Allocation factor:
+  = @allocation.allocation_factor
+%p
+  %b Allocation date:
+  = @allocation.allocation_date
+
+= link_to 'Edit', edit_allocation_path(@allocation)
+\|
+= link_to 'Back', allocations_path
