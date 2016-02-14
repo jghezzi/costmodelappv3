@@ -9,19 +9,23 @@ class AllocationsController < ApplicationController
 
   def generate
 
-      # @ai = Allocation.
+    @ai = AllocationInput.where(:product_id => params[:product_ids], :allocation_basis => params[:allocation_basis])
 
-      # @ai.each do |ai|
+    @ai.each do |ai|
 
-      # ai = Allocation.new(:product_id => ai.product_id, :allocation_input_id => ai.id, :allocation_units => ai.units, :allocation_date => ai.input_date, :date_dim_id => ai.date_dim_id, :allocation_name => params[:allocation_name], :status => "not_calculated")
-        
-      #   a.save
+      ai = Allocation.new(:product_id => ai.product_id, :allocation_input_id => ai.id, :allocation_units => ai.units, :allocation_date => ai.input_date, :date_dim_id => ai.date_dim_id, :allocation_name => params[:allocation_name], :status => "not_calculated")
+      
+    ai.save
 
-        
+    a = Allocation.select(:date_dim_id, :allocation_units).where(:status => 'not_calculated').group(:date_dim_id).sum(:allocation_units)
 
-      #   a = Allocation.select(:date_dim_id, :product_id, :units).where(product_id: [2,3]).group(:date_dim_id, :product_id).sum(:units).flatten
-
-    # end
+    a.each do |k,v|
+      my_alloc = Allocation.where(date_dim_id: k, :status => 'not_calculated')
+      sum_units = my_alloc.sum(:allocation_units)
+      my_alloc.update_all(allocation_base: sum_units, :status => "calculated")
+    end
+    
+    end
   end
 
   # GET /allocations/1
