@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213014017) do
+ActiveRecord::Schema.define(version: 20160215205614) do
 
   create_table "allocation_inputs", force: :cascade do |t|
     t.date     "input_date"
@@ -53,6 +53,22 @@ ActiveRecord::Schema.define(version: 20160213014017) do
     t.date     "ending_period"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.date     "period"
+    t.date     "gl_date"
+    t.string   "vendor_name"
+    t.string   "account_code"
+    t.string   "location_code"
+    t.string   "department_code"
+    t.string   "company_code"
+    t.float    "net_amount"
+    t.integer  "allocation_id"
+    t.integer  "date_dim_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "allocation_master_id"
   end
 
   create_table "products", force: :cascade do |t|

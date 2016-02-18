@@ -23,13 +23,15 @@ class AllocationsController < ApplicationController
       sum_units = Allocation.select(:allocation_units).where(date_dim_id: k, :status => "not_calculated").sum(:allocation_units)
       my_alloc.update_all(allocation_base: sum_units, status: 'base_generated')
 
-    base = Allocation.base_generated
+      base = Allocation.base_generated
 
-    base.each do |factor|
-      factor.update_attributes(allocation_factor: (factor.allocation_units / factor.allocation_base), status: "calculated")
+      base.each do |factor|
+        factor.update_attributes(allocation_factor: (factor.allocation_units / factor.allocation_base), status: "calculated")
+      end
     end
-
-    end
+    
+    redirect_to allocations_url
+  
   end
 
   # GET /allocations/1

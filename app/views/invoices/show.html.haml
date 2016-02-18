@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Period:
+  = @invoice.period
+%p
+  %b Gl date:
+  = @invoice.gl_date
+%p
+  %b Vendor name:
+  = @invoice.vendor_name
+%p
+  %b Account code:
+  = @invoice.account_code
+%p
+  %b Location code:
+  = @invoice.location_code
+%p
+  %b Department code:
+  = @invoice.department_code
+%p
+  %b Company code:
+  = @invoice.company_code
+%p
+  %b Net amount:
+  = @invoice.net_amount
+%p
+  %b Allocation:
+  = @invoice.allocation_id
+%p
+  %b Date dim:
+  = @invoice.date_dim_id
+
+= link_to 'Edit', edit_invoice_path(@invoice)
+\|
+= link_to 'Back', invoices_path

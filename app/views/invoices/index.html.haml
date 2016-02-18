@@ -1,0 +1,39 @@
+%h1 Listing invoices
+
+%table
+  %thead
+    %tr
+      %th Period
+      %th Gl date
+      %th Vendor name
+      %th Account code
+      %th Location code
+      %th Department code
+      %th Company code
+      %th Net amount
+      %th Allocation
+      %th Date dim
+      %th
+      %th
+      %th
+
+  %tbody
+    - @invoices.each do |invoice|
+      %tr
+        %td= invoice.period
+        %td= invoice.gl_date
+        %td= invoice.vendor_name
+        %td= invoice.account_code
+        %td= invoice.location_code
+        %td= invoice.department_code
+        %td= invoice.company_code
+        %td= invoice.net_amount
+        %td= invoice.allocation_id
+        %td= invoice.date_dim_id
+        %td= link_to 'Show', invoice
+        %td= link_to 'Edit', edit_invoice_path(invoice)
+        %td= link_to 'Destroy', invoice, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Invoice', new_invoice_path

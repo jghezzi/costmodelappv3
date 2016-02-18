@@ -1,0 +1,7 @@
+gl_date,vendor_name,account_code,location_code,department_code,company_code,net_amount
+"January 1, 2015",NADA,12345,889,345,VAT,10000
+"January 3, 2015",GhezziCorp,12345,889,345,VAT,2000
+"February 2, 2015",NADA,12345,889,345,VAT,10000
+"February 2, 2015",GhezziCorp,12345,889,345,VAT,2000
+"February 5, 2015",NADA,12345,889,345,VAT,10000
+"February 5, 2015",GhezziCorp,12345,889,345,VAT,2000
